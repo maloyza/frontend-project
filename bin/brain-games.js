@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import {findUserName} from '../src/cli.js'
+import { findUserName } from '../src/cli';
 
-console.log("Welcome to the Brain Games!");
-findUserName()
-
+console.log('Welcome to the Brain Games!');
+findUserName();
