@@ -9,6 +9,7 @@
   },
   "bin": {
     "brain-games": "bin/brain-games.js"
+    "brain-even": "bin/brain-even.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/maloyza/frontend-project-44#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
