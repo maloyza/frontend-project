@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 let userName;
 let randNumber;
+let result;
 
 function actionGreeting() {
     console.log('Welcome to the Brain Games!');
@@ -13,17 +14,18 @@ function actionGreeting() {
 
 function actionQuestion() {
     randNumber = _.random(1, 10);
+    if(randNumber % 2 == 0) result = 'yes';
+    else result = 'no'
     console.log(`Question: ${randNumber}`);
 }
 
 //todo
 function actionAnswer() {
     let userAnswer = readlineSync.question('Your answer: ');
-    let variantAnswer = (userAnswer == 'yes') ? "'no'" : "'yes'";
-    if(userAnswer == 'yes' && randNumber % 2 == 0 || userAnswer == 'no' && randNumber % 2 != 0){
+    if(userAnswer == result){
         return console.log('Correct!');
     } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was ${variantAnswer}. 
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was "${result}". 
 Let's try again, ${userName}`);
         process.exit();
     }
