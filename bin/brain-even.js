@@ -12,10 +12,11 @@ function actionGreeting() {
 }
 
 function actionQuestion() {
-    randNumber = _.random(1, 100);
+    randNumber = _.random(1, 10);
     console.log(`Question: ${randNumber}`);
 }
 
+//todo
 function actionAnswer() {
     let userAnswer = readlineSync.question('Your answer: ');
     let variantAnswer = (userAnswer == 'yes') ? "'no'" : "'yes'";
@@ -23,7 +24,7 @@ function actionAnswer() {
         return console.log('Correct!');
     } else {
         console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was ${variantAnswer}. 
-            Let's try again, ${userName}`);
+Let's try again, ${userName}`);
         process.exit();
     }
 }
