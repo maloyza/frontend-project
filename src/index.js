@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
 import _ from 'lodash';
 
+let maxNum
+let minNum
 let userName
 let userAnswer
-let randNumber
 let result
 
 export function startGameBrain_Even() {
@@ -21,6 +22,16 @@ export function startGameBrain_Calc() {
     console.log('What is the result of the expression?');
     for(var i = 0; i < 3; i = i + 1){
         actionQuestion_Calc();
+        actionAnswer();
+    };
+    console.log(`Congratulations, ${userName}!`);
+}
+
+export function startGameBrain_gcd() {
+    actionGreeting();
+    console.log('Find the greatest common divisor of given numbers.');
+    for(var i = 0; i < 3; i = i + 1){
+        actionQuestion_gcd();
         actionAnswer();
     };
     console.log(`Congratulations, ${userName}!`);
@@ -44,7 +55,7 @@ Let's try again, ${userName}!`)
 }
 
 function actionQuestion_Even() {
-    randNumber = _.random(1, 10);
+    const randNumber = _.random(1, 100);
     if(randNumber % 2 == 0) result = 'yes';
     else result = 'no'
     console.log(`Question: ${randNumber}`);
@@ -57,6 +68,23 @@ function actionQuestion_Calc() {
     console.log(`Question: ${randNumbers[0]} ${randOperat} ${randNumbers[1]}`);
 }
 
+function actionQuestion_gcd() { 
+    const divisibleNumbers = [_.random(1, 25), _.random(26, 50)];
+
+    determiningMaxMinNum(divisibleNumbers)
+
+    for(let i = minNum; i > 0; i = i - 1){
+        if(maxNum % minNum == 0){
+            result = minNum
+        } else if(maxNum % i == 0 && minNum % i == 0){
+            result = i
+            break
+        }
+    };
+
+    console.log(`${divisibleNumbers[0]} ${divisibleNumbers[1]}`)
+}
+
 function calculations(a, b, c) {
     switch(c) {
         case '+': return a + b;
@@ -64,4 +92,14 @@ function calculations(a, b, c) {
         case '*': return a * b;
     }  
 }
+
+function determiningMaxMinNum(arrDivNum) {
+    if(arrDivNum[0] > arrDivNum[1]){
+        maxNum = arrDivNum[0];
+        minNum = arrDivNum[1];
+    } else {
+        maxNum = arrDivNum[1];
+        minNum = arrDivNum[0];
+    }
+};
 
