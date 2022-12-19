@@ -36,7 +36,8 @@ function actionGreeting() {
 
 function actionAnswer() {
   userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === result) {
+  // eslint-disable-next-line eqeqeq
+  if (userAnswer == result) {
     console.log('Correct!');
   } else {
     console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}". 
