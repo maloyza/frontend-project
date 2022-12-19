@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGameBrain_Even } from "../../src/index.js"
+import { startGameBrainEven as startGame } from '../../src/index.js';
 
-startGameBrain_Even();
+startGame();

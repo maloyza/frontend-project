@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGameBrain_Progression } from "../../src/index.js"
+import { startGameBrainProgression as startGame } from '../../src/index.js';
 
-startGameBrain_Progression()
+startGame();

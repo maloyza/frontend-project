@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { startGameBrain_Prime } from "../../src/index.js"
+import { startGameBrainPrime as startGame } from '../../src/index.js';
 
-startGameBrain_Prime()
+startGame();
