@@ -45,6 +45,16 @@ export function startGameBrain_Progression() {
     console.log(`Congratulations, ${userName}!`);
 }
 
+export function startGameBrain_Prime() {
+    actionGreeting();
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+    for(var i = 0; i < 3; i = i + 1){
+        actionQuestion_Prime();
+        actionAnswer();
+    };
+    console.log(`Congratulations, ${userName}!`);
+}
+
 function actionGreeting() {
     console.log('Welcome to the Brain Games!');
     userName = readlineSync.question('May I have your name? ');
@@ -103,7 +113,15 @@ function actionQuestion_Progression() {
     randomArr[index] = '..' 
  
     console.log(`Question: ${randomArr.join(' ')}`);
- }
+}
+
+ function actionQuestion_Prime(){
+    let n = (_.random(2, 100))
+    if(Math.pow(2, n) % n == 2 % n) result = 'yes'
+    else result = 'no'
+
+    console.log(`Question: ${n}`);
+}
 
 function calculations(a, b, c) {
     switch(c) {

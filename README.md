@@ -5,5 +5,6 @@ https://asciinema.org/a/FlVxqwa1Q9g9noPbPDn6Og9ms - visual game brain-even
 https://asciinema.org/a/ftgM8CzHEGl18VoAR1QNxZgjz - visual game braib-calc
 https://asciinema.org/a/27hBR0eoNZMkkVVQOBjshfmBm - visual game brain-gcd
 https://asciinema.org/a/RFMXJG4VRvlr8qKkuIKN0ACYc - visual game brain-progression
+https://asciinema.org/a/TaQQHBUECzAOiReBu2KNVsIJQ - visual game brain-prime
 
 
