@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 import _ from 'lodash';
 
-let maxNum
-let minNum
 let userName
 let userAnswer
 let result
@@ -69,18 +67,12 @@ function actionQuestion_Calc() {
 }
 
 function actionQuestion_gcd() { 
-    const divisibleNumbers = [_.random(1, 25), _.random(26, 50)];
-
-    determiningMaxMinNum(divisibleNumbers)
-
-    for(let i = minNum; i > 0; i = i - 1){
-        if(maxNum % minNum == 0){
-            result = minNum
-        } else if(maxNum % i == 0 && minNum % i == 0){
-            result = i
-            break
-        }
-    };
+    const divisibleNumbers = [
+        randomEvenNumber(1, 75),
+        randomEvenNumber(1, 75)
+    ];
+    const minNum = Math.min(...divisibleNumbers);
+    result = maxCommonDivisor(divisibleNumbers, minNum)
 
     console.log(`${divisibleNumbers[0]} ${divisibleNumbers[1]}`)
 }
@@ -93,13 +85,16 @@ function calculations(a, b, c) {
     }  
 }
 
-function determiningMaxMinNum(arrDivNum) {
-    if(arrDivNum[0] > arrDivNum[1]){
-        maxNum = arrDivNum[0];
-        minNum = arrDivNum[1];
-    } else {
-        maxNum = arrDivNum[1];
-        minNum = arrDivNum[0];
-    }
-};
+function maxCommonDivisor(numArr, minNum) {
+    for(let i = minNum; i > 0; i = i - 1) {
+        if(numArr[0] % i == 0 && numArr[1] % i == 0){
+            return i
+        }
+    };
+    return 0;
+}
 
+function randomEvenNumber(min, max) {
+    let x = _.random(min, max);
+    return x % 2 == 0 ? x : randomOddEvenNumber(min, max);
+}
