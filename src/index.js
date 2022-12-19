@@ -35,6 +35,16 @@ export function startGameBrain_gcd() {
     console.log(`Congratulations, ${userName}!`);
 }
 
+export function startGameBrain_Progression() {
+    actionGreeting();
+    console.log('What number is missing in the progression?');
+    for(var i = 0; i < 3; i = i + 1){
+        actionQuestion_Progression();
+        actionAnswer();
+    };
+    console.log(`Congratulations, ${userName}!`);
+}
+
 function actionGreeting() {
     console.log('Welcome to the Brain Games!');
     userName = readlineSync.question('May I have your name? ');
@@ -74,8 +84,26 @@ function actionQuestion_gcd() {
     const minNum = Math.min(...divisibleNumbers);
     result = maxCommonDivisor(divisibleNumbers, minNum)
 
-    console.log(`${divisibleNumbers[0]} ${divisibleNumbers[1]}`)
+    console.log(`Question: ${divisibleNumbers[0]} ${divisibleNumbers[1]}`)
 }
+
+function actionQuestion_Progression() {
+    let randomArr = [];
+    let randomLength = _.random(5,10);
+    let randomStart = _.random(1,25);
+    let randomProgression = _.random(2,4);
+ 
+    randomArr[0] = randomStart;
+    while(randomArr.length < randomLength){
+       randomArr.push(randomArr[randomArr.length - 1] + randomProgression)
+    }
+ 
+    let index = _.random(0, randomArr.length - 1);
+    result = randomArr[index]
+    randomArr[index] = '..' 
+ 
+    console.log(`Question: ${randomArr.join(' ')}`);
+ }
 
 function calculations(a, b, c) {
     switch(c) {
@@ -96,5 +124,5 @@ function maxCommonDivisor(numArr, minNum) {
 
 function randomEvenNumber(min, max) {
     let x = _.random(min, max);
-    return x % 2 == 0 ? x : randomOddEvenNumber(min, max);
+    return x % 2 == 0 ? x : randomEvenNumber(min, max);
 }
