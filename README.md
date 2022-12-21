@@ -1,5 +1,5 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/maloyza/frontend-project-44/workflows/hexlet-check/badge.svg)]
+![Actions Status](https://github.com/maloyza/frontend-project-44/workflows/hexlet-check/badge.svg)
 
 (https://github.com/maloyza/frontend-project-44/actions)
 
@@ -28,27 +28,22 @@
 
     node bin/[brain-even/brain-calc/brain-gcd/brain-prime/brain-progression]
 
+## Визуальный показ игр
 
+**Even/Odd**
+[![asciicast](https://asciinema.org/a/545940.svg)](https://asciinema.org/a/545940)
 
+**Calculator**
+[![asciicast](https://asciinema.org/a/ftgM8CzHEGl18VoAR1QNxZgjz.svg)](https://asciinema.org/a/ftgM8CzHEGl18VoAR1QNxZgjz)
 
+**Find gcd**
+[![asciicast](https://asciinema.org/a/27hBR0eoNZMkkVVQOBjshfmBm.svg)](https://asciinema.org/a/27hBR0eoNZMkkVVQOBjshfmBm)
 
+**Subtract Progression**
 
+[![asciicast](https://asciinema.org/a/RFMXJG4VRvlr8qKkuIKN0ACYc.svg)](https://asciinema.org/a/RFMXJG4VRvlr8qKkuIKN0ACYc)
 
-
-
-
-
-
-
-
-https://asciinema.org/a/FlVxqwa1Q9g9noPbPDn6Og9ms - visual game brain-even
-
-https://asciinema.org/a/ftgM8CzHEGl18VoAR1QNxZgjz - visual game braib-calc
-
-https://asciinema.org/a/27hBR0eoNZMkkVVQOBjshfmBm - visual game brain-gcd
-
-https://asciinema.org/a/RFMXJG4VRvlr8qKkuIKN0ACYc - visual game brain-progression
-
-https://asciinema.org/a/TaQQHBUECzAOiReBu2KNVsIJQ - visual game brain-prime
+**Prime/Compound**
+[![asciicast](https://asciinema.org/a/TaQQHBUECzAOiReBu2KNVsIJQ.svg)](https://asciinema.org/a/TaQQHBUECzAOiReBu2KNVsIJQ)
 
 
