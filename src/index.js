@@ -1,27 +1,22 @@
 import readlineSync from 'readline-sync';
 
-let userAnswer;
-let userName;
-
-function actionGreeting(rules) {
+export default function runGame(rules, generateRound) {
   console.log('Welcome to the Brain Games!');
-  userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(rules);
-  return userName;
-}
 
-function actionAnswer(result) {
-  userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer !== String(result)) {
-    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${result}". 
+  for (let i = 0; i < 3; i += 1) {
+    const [question, answer] = generateRound();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer !== String(answer)) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}". 
 Let's try again, ${userName}!`);
-    process.exit();
+      process.exit();
+    }
+    console.log('Correct!');
   }
-  console.log('Correct!');
-}
 
-export {
-  actionGreeting,
-  actionAnswer,
-};
+  console.log(`Congratulations, ${userName}!`);
+}
