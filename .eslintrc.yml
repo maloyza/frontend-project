@@ -9,7 +9,7 @@ extends:
 parserOptions:
   ecmaVersion: latest
 
-rules:
+gameRule:
   no-console: 0
   import/extensions:
     - error

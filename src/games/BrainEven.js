@@ -1,11 +1,19 @@
-import { EvenCheck, getRandomNumber } from '../tools.js';
+import { getRandomNumber } from '../tools.js';
 import runGame from '../index.js';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+function isEvenNumber(num) {
+  let answer;
+  if (num % 2 === 0) answer = 'yes';
+  else answer = 'no';
+
+  return answer;
+}
 
 function generateRound() {
   const question = getRandomNumber(1, 100);
-  const result = EvenCheck(question);
+  const result = isEvenNumber(question);
 
   return [
     question,
@@ -14,5 +22,5 @@ function generateRound() {
 }
 
 export default function startGame() {
-  runGame(rules, generateRound);
+  runGame(gameRule, generateRound);
 }

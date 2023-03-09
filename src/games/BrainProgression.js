@@ -1,9 +1,9 @@
 import { getRandomNumber } from '../tools.js';
 import runGame from '../index.js';
 
-const rules = 'What number is missing in the progression?';
+const gameRule = 'What number is missing in the progression?';
 
-function generateRound() {
+function generatingProgression() {
   const randomArr = [];
   const randomLength = getRandomNumber(5, 10);
   const randomStart = getRandomNumber(1, 25);
@@ -13,6 +13,13 @@ function generateRound() {
   while (randomArr.length < randomLength) {
     randomArr.push(randomArr[randomArr.length - 1] + randomProgression);
   }
+  
+  return randomArr;
+}
+
+function generateRound() {
+  const randomArr = generatingProgression();
+
   const index = getRandomNumber(0, randomArr.length - 1);
   const result = randomArr[index];
   randomArr[index] = '..';
@@ -26,5 +33,5 @@ function generateRound() {
 }
 
 export default function startGame() {
-  runGame(rules, generateRound);
+  runGame(gameRule, generateRound);
 }
