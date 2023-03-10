@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../tools.js';
+import getRandomNumber from '../tools.js';
 import runGame from '../index.js';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
