@@ -13,7 +13,6 @@ function generatingProgression() {
   while (randomArr.length < randomLength) {
     randomArr.push(randomArr[randomArr.length - 1] + randomProgression);
   }
-  
   return randomArr;
 }
 
