@@ -4,16 +4,12 @@ import runGame from '../index.js';
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function isEvenNumber(num) {
-  let answer;
-  if (num % 2 === 0) answer = 'yes';
-  else answer = 'no';
-
-  return answer;
+  return num % 2 === 0;
 }
 
 function generateRound() {
   const question = getRandomNumber(1, 100);
-  const result = isEvenNumber(question);
+  const result = isEvenNumber(question) ? 'yes' : 'no';
 
   return [
     question,
