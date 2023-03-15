@@ -1,34 +1,29 @@
-import getRandomNumber from '../tools.js';
 import runGame from '../index.js';
+import getRandomNumber from '../tools.js';
 
 const gameRule = 'What number is missing in the progression?';
 
-function generatingProgression(getRandomNumber) {
-  const randomArr = [];
-  const randomLength = getRandomNumber(5, 10);
-  const randomStart = getRandomNumber(1, 25);
-  const randomProgression = getRandomNumber(2, 4);
-
-  randomArr[0] = randomStart;
-  while (randomArr.length < randomLength) {
-    randomArr.push(randomArr[randomArr.length - 1] + randomProgression);
+function generateProgression(start, step, length) {
+  const progression = [];
+  for (let i = 0; i < length; i++) {
+    progression.push(start + step * i);
   }
-  return randomArr;
+  return progression;
 }
 
 function generateRound() {
-  const randomArr = generatingProgression(getRandomNumber);
+  const progressionStart = getRandomNumber(1, 25);
+  const progressionStep = getRandomNumber(2, 4);
+  const progressionLength = getRandomNumber(5, 10);
+  const progression = generateProgression(progressionStart, progressionStep, progressionLength);
 
-  const index = getRandomNumber(0, randomArr.length - 1);
-  const result = randomArr[index];
-  randomArr[index] = '..';
+  const missingIndex = getRandomNumber(0, progressionLength - 1);
+  const correctAnswer = progression[missingIndex];
+  progression[missingIndex] = '..';
 
-  const question = `${randomArr.join(' ')}`;
+  const question = progression.join(' ');
 
-  return [
-    question,
-    result,
-  ];
+  return [question, correctAnswer.toString()];
 }
 
 export default function startGame() {
