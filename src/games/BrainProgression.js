@@ -3,7 +3,7 @@ import runGame from '../index.js';
 
 const gameRule = 'What number is missing in the progression?';
 
-function generatingProgression() {
+function generatingProgression(getRandomNumber) {
   const randomArr = [];
   const randomLength = getRandomNumber(5, 10);
   const randomStart = getRandomNumber(1, 25);
@@ -17,7 +17,7 @@ function generatingProgression() {
 }
 
 function generateRound() {
-  const randomArr = generatingProgression();
+  const randomArr = generatingProgression(getRandomNumber);
 
   const index = getRandomNumber(0, randomArr.length - 1);
   const result = randomArr[index];

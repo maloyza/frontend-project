@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import findUserName from '../src/cli.js';
+import startGame from '../src/cli.js';
 
-findUserName();
+startGame();

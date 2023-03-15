@@ -2,6 +2,7 @@ import getRandomNumber from '../tools.js';
 import runGame from '../index.js';
 
 const gameRule = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
 function calculate(num1, num2, result) {
   switch (result) {
@@ -18,15 +19,14 @@ function calculate(num1, num2, result) {
 function generateRound() {
   const randNumber1 = getRandomNumber(1, 10);
   const randNumber2 = getRandomNumber(1, 10);
-  const operators = ['+', '-', '*'];
   const randOperat = operators[getRandomNumber(0, operators.length - 1)];
-  const result = calculate(randNumber1, randNumber2, randOperat);
+  const correctAnswer = calculate(randNumber1, randNumber2, randOperat);
 
   const question = `${randNumber1} ${randOperat} ${randNumber2}`;
 
   return [
     question,
-    result,
+    correctAnswer,
   ];
 }
 

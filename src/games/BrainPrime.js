@@ -4,16 +4,24 @@ import runGame from '../index.js';
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrimeNumber(num) {
-  return (2 ** num) % num === 2 % num;
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function generateRound() {
   const question = getRandomNumber(2, 100);
-  const result = isPrimeNumber(question) ? 'yes' : 'no';
+  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
 
   return [
     question,
-    result,
+    correctAnswer,
   ];
 }
 
