@@ -17,7 +17,7 @@ function generateRound() {
   const progressionLength = getRandomNumber(5, 10);
   const progression = generateProgression(progressionStart, progressionStep, progressionLength);
 
-  const missingIndex = getRandomNumber(0, progressionLength - 1);
+  const missingIndex = getRandomNumber(0, progression.length - 1);
   const correctAnswer = progression[missingIndex];
   progression[missingIndex] = '..';
 
