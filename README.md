@@ -5,7 +5,7 @@
 
 ## О проекте
 
-Данный проект был разработан во время обучения на Хекслете и представляет из себя набор из пяти игр: 'Even/Odd', 'Calculator', 'Find gcd', 'Subtract Progression', 'Prime/Compound'.
+Данный проект представляет из себя набор из пяти игр: 'Even/Odd', 'Calculator', 'Find gcd', 'Subtract Progression', 'Prime/Compound'.
 
 ## Требования
 <ul>
