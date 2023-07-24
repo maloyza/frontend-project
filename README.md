@@ -18,7 +18,7 @@
     cd namefolder
 Клонировать репозиторий
 
-    git clone https://github.com/maloyza/frontend-project-44.git .
+    git clone https://github.com/maloyza/frontend-project.git .
 Произвести установку зависимости пакетов
 
     npm ci
